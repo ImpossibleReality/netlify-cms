@@ -19,16 +19,6 @@ const CustomIconWrapper = styled.span`
   margin-top: -150px;
 `;
 
-const NetlifyLogoIcon = styled(Icon)`
-  color: #c4c6d2;
-  margin-top: -300px;
-`;
-
-const NetlifyCreditIcon = styled(Icon)`
-  color: #c4c6d2;
-  position: absolute;
-  bottom: 10px;
-`;
 
 const CustomLogoIcon = ({ url }) => {
   return (
@@ -36,13 +26,6 @@ const CustomLogoIcon = ({ url }) => {
       <img src={url} alt="Logo" />
     </CustomIconWrapper>
   );
-};
-
-const renderPageLogo = logoUrl => {
-  if (logoUrl) {
-    return <CustomLogoIcon url={logoUrl} />;
-  }
-  return <NetlifyLogoIcon size="300px" type="netlify-cms" />;
 };
 
 const LoginButton = styled.button`
@@ -82,7 +65,6 @@ const AuthenticationPage = ({
         </LoginButton>
       )}
       {siteUrl && <GoBackButton href={siteUrl} t={t} />}
-      {logoUrl ? <NetlifyCreditIcon size="100px" type="netlify-cms" /> : null}
     </StyledAuthenticationPage>
   );
 };
